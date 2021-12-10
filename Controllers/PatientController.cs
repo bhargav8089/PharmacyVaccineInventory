@@ -43,17 +43,42 @@ namespace PharmacyVaccineInventory.Controllers
             }
             catch (Exception)
             {
-
                 throw;
             }
-
             return View(patients);
         }
 
         // GET: PatientController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Patient patient = new Patient();
+            try
+            {
+                using (SqlConnection ConnectionObject = new SqlConnection(PharmacyVaccineInventory.Properties.Resources.ConnectionString))
+                {
+                    ConnectionObject.Open();
+                    using (SqlCommand CommandObject = new SqlCommand("SELECT * FROM dbo.Patient WHERE Id = " + id, ConnectionObject))
+                    {
+                        using (SqlDataReader dr = CommandObject.ExecuteReader(CommandBehavior.CloseConnection))
+                        {
+                            while (dr.Read())
+                            {
+                                patient.Id = dr.GetInt64(dr.GetOrdinal("Id"));
+                                patient.FName = dr.GetString(dr.GetOrdinal("FName"));
+                                patient.LName = dr.GetString(dr.GetOrdinal("LName"));
+                                patient.DOB = dr.GetDateTime(dr.GetOrdinal("DOB"));
+                                patient.phone = dr.GetInt64(dr.GetOrdinal("phone"));
+                                patient.gender = dr.GetString(dr.GetOrdinal("gender"));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return View(patient);
         }
 
         // GET: PatientController/Create

@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net5.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.PublishSingleFile = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = PharmacyVaccineInventory
+build_property.ProjectDir = C:\Users\manda\OneDrive - Wichita State University\USA\Universities\WSU\CS 665\CS 665 Project\PharmacyVaccineInventory\

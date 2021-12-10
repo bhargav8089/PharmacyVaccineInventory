@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="PharmacyVaccineInventory20211209075506" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\manda\\OneDrive\ -\ Wichita\ State\ University\\USA\\Universities\\WSU\\CS\ 665\\CS\ 665\ Project\\PharmacyVaccineInventory\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>
